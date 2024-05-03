@@ -1,0 +1,14 @@
+import sys
+from module_1 import raw_data_collector
+from module_2 import processor
+import txt_to_html
+num = raw_data_collector.rdc(sys.argv)
+processor.process(num)
+
+i = 1
+while i <= 10:
+    processed_txt = "Data/processed/article_" + str(i) + "_full.txt"
+    html_code = "all_files.html"
+    txt_to_html.txt_to_html(processed_txt, html_code)  # Call txt_to_html.txt_to_html() function
+    i += 1
+    
